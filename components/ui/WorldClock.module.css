@@ -1,0 +1,35 @@
+.wrap { position:relative; }
+
+.primary { display:flex;align-items:center;gap:0.5rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.3rem 0.625rem;cursor:pointer;transition:border-color 0.15s;font-family:var(--font); }
+.primary:hover { border-color:var(--accent); }
+.info { display:flex;flex-direction:column;gap:0.05rem; }
+.time { font-size:0.8rem;font-weight:700;color:var(--text-primary);white-space:nowrap; }
+.date { font-size:0.65rem;color:var(--text-muted);white-space:nowrap; }
+.chevron { font-size:0.55rem;color:var(--text-muted);margin-left:2px; }
+
+.dropdown {
+  position:absolute;top:calc(100% + 6px);right:0;
+  background:var(--bg-surface);border:1px solid var(--border-strong);
+  border-radius:var(--radius);padding:0.5rem;
+  width:280px;box-shadow:var(--shadow-lg);z-index:500;
+}
+.searchInput {
+  width:100%;padding:0.4rem 0.625rem;
+  background:var(--bg-elevated);border:1px solid var(--border);
+  border-radius:var(--radius-sm);color:var(--text-primary);
+  font-family:var(--font);font-size:0.82rem;outline:none;
+  margin-bottom:0.375rem;
+}
+.searchInput:focus { border-color:var(--accent); }
+.zoneList { max-height:280px;overflow-y:auto;display:flex;flex-direction:column;gap:0.125rem; }
+.zone { display:flex;align-items:center;gap:0.5rem;padding:0.4rem 0.5rem;border-radius:var(--radius-sm);transition:background 0.12s; }
+.zone:hover { background:var(--bg-elevated); }
+.zoneActive { background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.2); }
+.flag { font-size:1rem;flex-shrink:0; }
+.zoneInfo { flex:1;min-width:0; }
+.city { display:block;font-size:0.82rem;font-weight:600;color:var(--text-primary); }
+.country { display:block;font-size:0.68rem;color:var(--text-muted); }
+.zoneRight { text-align:right;flex-shrink:0; }
+.zoneTime { display:block;font-size:0.8rem;font-weight:700;color:var(--accent-light); }
+.zoneDate { display:block;font-size:0.65rem;color:var(--text-muted); }
+.noResult { text-align:center;color:var(--text-muted);font-size:0.82rem;padding:1rem; }

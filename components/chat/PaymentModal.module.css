@@ -1,0 +1,12 @@
+.overlay { position:fixed;inset:0;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;z-index:999;padding:1rem; }
+.modal { background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius);width:100%;max-width:380px;display:flex;flex-direction:column;box-shadow:var(--shadow-lg); }
+.header { display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid var(--border); }
+.header h2 { font-size:1.1rem;font-weight:700; }
+.close { background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1rem; }
+.body { padding:1.5rem;display:flex;flex-direction:column;align-items:center;gap:1.25rem; }
+.price { font-size:2.5rem;font-weight:900;background:linear-gradient(135deg,var(--yellow),#f97316);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent; }
+.price span { font-size:1rem;color:var(--text-muted);-webkit-text-fill-color:var(--text-muted); }
+.features { list-style:none;width:100%;display:flex;flex-direction:column;gap:0.625rem; }
+.features li { font-size:0.875rem;color:var(--text-secondary);display:flex;align-items:center;gap:0.5rem; }
+.features li::before { content: attr(content); }
+.footer { padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:0.5rem; }

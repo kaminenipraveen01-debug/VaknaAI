@@ -1,0 +1,73 @@
+.sidebar {
+  width: var(--sidebar-width); min-width: var(--sidebar-width); max-width: var(--sidebar-width);
+  height: 100vh; background: var(--bg-surface); border-right: 1px solid var(--border);
+  display: flex; flex-direction: column;
+  transition: width 0.27s ease, min-width 0.27s ease, max-width 0.27s ease;
+  overflow: hidden; flex-shrink: 0;
+}
+.collapsed { width:0!important; min-width:0!important; max-width:0!important; border-right:none; }
+
+.top { padding:1rem;display:flex;flex-direction:column;gap:0.75rem;border-bottom:1px solid var(--border); }
+.logo { display:flex;align-items:center;gap:0.625rem; }
+.logoText { font-size:1rem;font-weight:800;white-space:nowrap;background:linear-gradient(135deg,var(--text-primary),var(--accent-light));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent; }
+.newChat { padding:0.575rem 1rem;background:var(--accent);color:#fff;border:none;border-radius:var(--radius-sm);font-size:0.84rem;font-weight:600;cursor:pointer;transition:all 0.18s;font-family:var(--font);white-space:nowrap;text-align:center; }
+.newChat:hover { background:var(--accent-dark); }
+
+.quickActions { padding:0.5rem;display:flex;flex-direction:column;gap:0.25rem;border-bottom:1px solid var(--border); }
+.quickBtn { display:flex;align-items:center;gap:0.625rem;padding:0.575rem 0.75rem;border:none;border-radius:var(--radius-sm);background:transparent;cursor:pointer;color:var(--text-secondary);font-size:0.85rem;font-family:var(--font);transition:all 0.15s;white-space:nowrap;text-align:left; }
+.quickBtn:hover { background:var(--bg-elevated);color:var(--text-primary); }
+.heart { color:var(--pink);margin-left:auto; }
+
+.chatList { flex:1;overflow-y:auto;padding:0.625rem 0.5rem;display:flex;flex-direction:column;gap:0.125rem; }
+.sectionLabel { font-size:0.68rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;padding:0.25rem 0.5rem 0.375rem; }
+.emptyChats { font-size:0.82rem;color:var(--text-muted);text-align:center;padding:1.5rem 0.5rem; }
+
+.chatItem { display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0.75rem;border-radius:var(--radius-sm);cursor:pointer;color:var(--text-secondary);font-size:0.84rem;transition:all 0.14s; }
+.chatItem:hover { background:var(--bg-elevated);color:var(--text-primary); }
+.active { background:rgba(99,102,241,0.1);color:var(--text-primary);border:1px solid rgba(99,102,241,0.2); }
+.chatIcon { flex-shrink:0;font-size:0.8rem;opacity:0.7; }
+.chatName { flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.del { background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:0.7rem;padding:0.15rem 0.3rem;border-radius:4px;opacity:0;transition:all 0.14s;flex-shrink:0; }
+.chatItem:hover .del { opacity:1; }
+.del:hover { background:rgba(239,68,68,0.15);color:#fca5a5; }
+
+.footer { padding:0.75rem;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:0.625rem; }
+.upgradeBtn { padding:0.625rem;background:linear-gradient(135deg,var(--yellow),#f97316);color:#fff;border:none;border-radius:var(--radius-sm);font-size:0.8rem;font-weight:700;cursor:pointer;font-family:var(--font);white-space:nowrap;transition:opacity 0.18s;text-align:center; }
+.upgradeBtn:hover { opacity:0.9; }
+
+.profile { display:flex;align-items:center;gap:0.625rem;padding:0.25rem 0; }
+.avatarWrap { width:32px;height:32px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0; }
+.avatarImg { width:100%;height:100%;object-fit:cover; }
+.avatarLetter { font-size:0.8rem;font-weight:700;color:#fff; }
+.profileInfo { flex:1;min-width:0; }
+.profileName { font-size:0.82rem;font-weight:600;color:var(--text-primary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.planBadge { font-size:0.72rem;color:var(--text-muted); }
+.settingsIcon { background:none;border:none;cursor:pointer;font-size:0.95rem;padding:0.2rem;color:var(--text-muted);transition:color 0.15s;flex-shrink:0; }
+.settingsIcon:hover { color:var(--text-primary); }
+
+.signInBtn { width:100%;padding:0.575rem;background:var(--bg-elevated);border:1px solid var(--border-strong);border-radius:var(--radius-sm);color:var(--text-secondary);font-size:0.82rem;font-weight:600;cursor:pointer;font-family:var(--font);transition:all 0.18s;text-align:center; }
+.signInBtn:hover { background:var(--accent);border-color:var(--accent);color:#fff; }
+
+.usage { display:flex;flex-direction:column;gap:0.3rem; }
+.usageRow { display:flex;justify-content:space-between;align-items:center; }
+.usageText { font-size:0.7rem;color:var(--text-muted); }
+.usageBar { height:3px;background:var(--bg-overlay);border-radius:3px;overflow:hidden; }
+.usageFill { height:100%;background:linear-gradient(90deg,var(--accent),var(--pink));border-radius:3px;transition:width 0.4s ease; }
+
+@media (max-width:768px) {
+  .sidebar { position:fixed;left:0;top:0;bottom:0;z-index:100;box-shadow:var(--shadow-lg); }
+  .collapsed { transform:translateX(-100%);width:var(--sidebar-width)!important;min-width:var(--sidebar-width)!important;max-width:var(--sidebar-width)!important; }
+}
+
+.toolsSection { padding:0.5rem;border-bottom:1px solid var(--border); }
+.toolsGrid { display:grid;grid-template-columns:1fr 1fr;gap:0.3rem;margin-top:0.35rem; }
+.toolBtn { display:flex;align-items:center;gap:0.4rem;padding:0.45rem 0.5rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer;transition:all 0.15s;font-family:var(--font);position:relative;overflow:hidden; }
+.toolBtn:hover { background:var(--bg-overlay);border-color:var(--accent); }
+.toolIcon { font-size:0.9rem;flex-shrink:0; }
+.toolLabel { font-size:0.72rem;color:var(--text-secondary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.toolBtn:hover .toolLabel { color:var(--text-primary); }
+.memBadge { position:absolute;top:3px;right:4px;background:var(--accent);color:#fff;font-size:0.6rem;font-weight:700;border-radius:100px;padding:0 4px;min-width:14px;text-align:center; }
+.trustLinks { display:flex;align-items:center;justify-content:center;gap:0.375rem;font-size:0.68rem; }
+.trustLinks a { color:var(--text-muted);text-decoration:none; }
+.trustLinks a:hover { color:var(--text-secondary); }
+.trustLinks span { color:var(--text-muted); }

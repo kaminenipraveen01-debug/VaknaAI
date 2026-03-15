@@ -1,0 +1,76 @@
+.wrap { padding:0.75rem 1rem 0.5rem;border-top:1px solid var(--border);background:var(--bg-surface);flex-shrink:0;display:flex;flex-direction:column;gap:0.5rem;position:relative; }
+
+.modeBar { display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;border:1px solid;border-radius:var(--radius-sm);padding:0.3rem 0.875rem;font-weight:500; }
+
+.filePreview { display:flex;align-items:center;gap:0.75rem;padding:0.5rem 0.75rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm); }
+.previewImg { width:44px;height:44px;object-fit:cover;border-radius:6px;flex-shrink:0; }
+.fileInfo { flex:1;min-width:0; }
+.fileName { display:block;font-size:0.82rem;color:var(--text-primary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.fileHint { display:block;font-size:0.72rem;color:var(--text-muted);margin-top:0.1rem; }
+.removeFile { background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:0.85rem;padding:0.25rem 0.4rem;border-radius:4px;flex-shrink:0; }
+.removeFile:hover { color:#fca5a5; }
+
+.effectsRow { display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap; }
+.effectLabel { font-size:0.78rem;color:var(--text-muted);flex-shrink:0;white-space:nowrap; }
+.effectBtn { padding:0.25rem 0.625rem;background:var(--bg-elevated);border:1px solid var(--border);border-radius:100px;font-size:0.75rem;color:var(--text-secondary);cursor:pointer;transition:all 0.14s;font-family:var(--font);text-transform:capitalize;white-space:nowrap; }
+.effectBtn:hover { border-color:var(--accent-light);color:var(--text-primary); }
+.effectActive { background:rgba(99,102,241,0.15);border-color:var(--accent);color:var(--accent-light); }
+
+.inputRow { display:flex;align-items:flex-end;gap:0.5rem;background:var(--bg-elevated);border:1px solid var(--border-strong);border-radius:var(--radius-lg);padding:0.625rem 0.75rem;transition:border-color 0.2s; }
+.inputRow:focus-within { border-color:var(--border-focus);box-shadow:0 0 0 3px rgba(99,102,241,0.08); }
+.input { flex:1;background:none;border:none;outline:none;color:var(--text-primary);font-family:var(--font);font-size:0.9375rem;line-height:1.6;resize:none;max-height:160px;overflow-y:auto;min-height:24px; }
+.input::placeholder { color:var(--text-muted); }
+.inputBtns { display:flex;align-items:center;gap:0.25rem;flex-shrink:0; }
+.iconBtn { background:none;border:none;cursor:pointer;font-size:1.05rem;padding:0.3rem;border-radius:8px;color:var(--text-muted);transition:all 0.14s;line-height:1; }
+.iconBtn:hover { background:var(--bg-overlay);color:var(--text-primary); }
+.plusActive { background:var(--bg-overlay);color:var(--text-primary); }
+
+/* Plus menu */
+.plusWrap { position:relative; }
+.plusMenu {
+  position:absolute;bottom:calc(100% + 10px);right:0;
+  background:var(--bg-surface);border:1px solid var(--border-strong);
+  border-radius:var(--radius);padding:0.5rem;
+  display:flex;flex-direction:column;gap:0.125rem;
+  box-shadow:var(--shadow-lg);z-index:50;min-width:240px;
+  animation:fadeIn 0.15s ease;
+}
+.plusGroup { font-size:0.68rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.6px;padding:0.375rem 0.625rem 0.2rem;margin-top:0.25rem; }
+.plusGroup:first-child { margin-top:0; }
+.plusItem { display:flex;align-items:center;gap:0.75rem;padding:0.5rem 0.625rem;background:none;border:none;cursor:pointer;border-radius:var(--radius-sm);color:var(--text-secondary);font-family:var(--font);transition:all 0.14s;text-align:left;width:100%; }
+.plusItem:hover { background:var(--bg-elevated);color:var(--text-primary); }
+.plusIcon { font-size:1.15rem;flex-shrink:0;width:24px;text-align:center; }
+.plusLabel { font-size:0.85rem;font-weight:500;color:inherit; }
+.plusDesc { font-size:0.72rem;color:var(--text-muted);margin-top:0.1rem; }
+
+.sendBtn { width:36px;height:36px;background:var(--accent);border:none;border-radius:10px;color:#fff;cursor:pointer;font-size:1.15rem;display:flex;align-items:center;justify-content:center;transition:all 0.18s;flex-shrink:0;font-weight:700;line-height:1; }
+.sendBtn:hover:not(.sendDisabled) { background:var(--accent-dark);transform:scale(1.05); }
+.sendDisabled { background:var(--bg-overlay);color:var(--text-muted);cursor:not-allowed;transform:none!important; }
+.spinner { width:15px;height:15px;border:2px solid rgba(255,255,255,0.3);border-top-color:#fff;border-radius:50%;animation:spin 0.7s linear infinite;display:inline-block; }
+
+.footer { font-size:0.72rem;color:var(--text-muted);text-align:center;padding-bottom:0.125rem; }
+
+/* Voice */
+.voiceWrap { display:flex;align-items:center;gap:1px; }
+.voiceBtn { background:none;border:none;cursor:pointer;font-size:1.05rem;padding:0.3rem;border-radius:8px;color:var(--text-muted);transition:all 0.14s;line-height:1; }
+.voiceBtn:hover { background:var(--bg-overlay);color:var(--text-primary); }
+.voiceActive { color:var(--red)!important;animation:pulse 1s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+.langSelect { background:none;border:none;font-size:0.68rem;color:var(--text-muted);cursor:pointer;outline:none;font-family:var(--font);max-width:52px; }
+.langSelect:hover { color:var(--text-primary); }
+
+/* Voice overlay */
+.voiceOverlay { display:flex;flex-direction:column;align-items:center;gap:0.5rem;padding:0.75rem;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.2);border-radius:var(--radius);margin-bottom:0.25rem; }
+.voiceWaves { display:flex;align-items:center;gap:4px;height:50px; }
+.voiceBar { width:4px;background:var(--accent);border-radius:4px;animation:wavePulse 0.8s ease-in-out infinite alternate;min-height:8px;transition:height 0.1s; }
+@keyframes wavePulse { from{opacity:0.4;transform:scaleY(0.6)} to{opacity:1;transform:scaleY(1)} }
+.voiceLabel { font-size:0.82rem;color:var(--accent-light);font-weight:600; }
+.voiceStop { background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#fca5a5;border-radius:var(--radius-sm);padding:0.25rem 0.75rem;font-size:0.78rem;cursor:pointer;font-family:var(--font); }
+
+.ariaVoiceBtn { background:none;border:1px solid var(--pink);border-radius:8px;cursor:pointer;font-size:1rem;padding:0.3rem 0.45rem;color:var(--pink);transition:all 0.15s;line-height:1; }
+.ariaVoiceBtn:hover { background:rgba(236,72,153,0.1); }
+.ariaVoiceActive { background:rgba(236,72,153,0.15);animation:pulse 1.2s ease-in-out infinite; }
+
+/* Gemini Live voice button */
+.voiceLiveBtn { background:none;border:1px solid var(--accent);border-radius:8px;cursor:pointer;padding:0.3rem 0.4rem;color:var(--accent-light);transition:all 0.15s;display:flex;align-items:center;justify-content:center; }
+.voiceLiveBtn:hover { background:rgba(99,102,241,0.15);transform:scale(1.05); }
